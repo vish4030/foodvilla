@@ -1,13 +1,19 @@
-import React from 'react';
+
 import {Link} from 'react-router-dom';
 
-import logo from '../../assets/images/logo.png';
 
+import logo from '../../assets/images/logo.png';
+import {CartIcon} from "../../config";
 import "./Header.css";
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+ 
+  const cartItem = useSelector(state=>state.cart.length);
+   
+  
   return (
-    <div className='header'>
+    <div className='header' >
         <div className='container'>
           <div className='row justify-space-bet align-center'>
             <div className='col-3 logo'> 
@@ -24,6 +30,9 @@ const Header = () => {
                 <li>
                   <Link to="/contact">Contact</Link>
                 </li>
+                <li>
+                  <Link to="/cart"><CartIcon /> <span>{cartItem}</span></Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -32,4 +41,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

@@ -4,7 +4,7 @@
 *, ::after, ::before{ margin: 0; box-sizing: border-box;}
 
 /* html tags reset */
-a{text-decoration: none;}
+a{text-decoration: none; color: inherit;}
 button{cursor: pointer; padding: 0;}
 ul{list-style: none; padding: 0;}
 label{display: block;}
@@ -23,7 +23,7 @@ html{
     --sky-blue:#00a4ff;
 }
 
-body{font-size: 16px; font-family:var(--ff);}
+body{font-size: 16px; font-family:var(--ff); position: relative;}
 
 
 /* utility class */
@@ -53,7 +53,14 @@ body{font-size: 16px; font-family:var(--ff);}
 .flex{ display: flex; }
 .justify-space-bet{ justify-content: space-between;}
 .justify-center{ justify-content: center;}
+.justify-space-ar{ justify-content: space-around;}
 .align-center{ align-items: center;}
 .gap-4{gap: 4rem;}
 .flex-row{flex-flow: row wrap;}
 .flex-column{flex-flow: column wrap;}
+
+
+
+.search-box{text-align: center; margin: 30px auto;}
+.search-box input{padding: 5px 0; font-size: 22px;}
+.search-box button{padding: 8px 20px; font-size: 16px; margin-left: 30px;}

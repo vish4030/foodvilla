@@ -5,7 +5,7 @@ import "./RestaurantCard.css";
 
 
 const RestaurantCard = (props) => {
-    const {name, areaName, avgRating, cuisines, cloudinaryImageId } = props?.info?.info;
+    const {name, areaName, avgRating, cuisines, cloudinaryImageId } = props?.info;
   return (
    <div className="restaurant-card">
         <div className="card-img">
