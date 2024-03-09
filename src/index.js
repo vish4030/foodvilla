@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactDom from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { Provider } from "react-redux";
@@ -11,16 +11,24 @@ import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer.js";
 import RestaurantMenu from "./components/restaurantMenu/RestaurantMenu.js";
 import Cart from "./components/cart/Cart.js";
-import store from "./utils/store.js"
+import store from "./utils/store.js";
+import UserContext from "./utils/UserContext.js";
+
 
 
 const AppLayout = () =>{
+
+    const[user, setUser] = useState({user:{
+        name:"Vishwajeet Kumar",
+        email:"vishwajeetk4030@gmail.com",
+    }})
+
     return(
-    <>
+    <UserContext.Provider value={user}>
         <Header />
         <Outlet />
         <Footer />
-    </>
+    </UserContext.Provider>
     )
 }
 
@@ -57,4 +65,8 @@ const routes = createBrowserRouter([
 ])
 
 const root = ReactDom.createRoot(document.getElementById("root"));
-root.render(<Provider store={store}><RouterProvider router={routes} /></Provider>);
+root.render(
+    <Provider store={store}>
+        <RouterProvider router={routes} />
+    </Provider>
+)
