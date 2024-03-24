@@ -1,0 +1,11 @@
+
+.custom-btn{
+    font-size: 1rem;
+    border: 2px solid #7d7878;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.custom-btn:active{ background: #484646; color: #fff; border-color: #fff;}

@@ -7,14 +7,13 @@ import useIsOnline from "./utils/customHooks/useIsOnline";
 import Button from "./components/button/Button";
 import Input from "./components/input/Input";
 import { Link } from "react-router-dom";
-import { RestaurantData } from "./config";
+
 
 const App = () => {
   const [restaurants, setRestaurants] = useState(null);
   const [filteredRestaurant, setFilteredRestaurant] = useState(null)
   const [searchText, setSearchText] = useState("");
   const isOnline = useIsOnline();
-  const resKeys = Object.keys(RestaurantData);
   
   const fetchRestaurant = async()=>{
     const res = await fetch('http://localhost:3000/data/all');

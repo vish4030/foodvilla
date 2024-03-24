@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './Button.css';
 
 const Button = ({handleClick, btnName}) => {
   return (
-    <button className='btn'
-        onClick={(e)=>handleClick(e)}
-    >
+    <button className='custom-btn' onClick={(e)=>handleClick(e)}>
         {btnName}
     </button>
   )

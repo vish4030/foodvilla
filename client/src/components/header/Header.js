@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 
 import logo from '../../assets/images/logo.png';
-import {CartIcon} from "../../config";
+import {CartIcon} from "../../constant.js";
 import "./Header.css";
 import UserContext from '../../utils/UserContext';
 
@@ -12,7 +12,7 @@ import UserContext from '../../utils/UserContext';
 const Header = () => {
 
   const {user} = useContext(UserContext);
-  const cartItem = useSelector(state=>state.cart.length);
+  const cartItem = useSelector(state=>state.cart.total);
 
 
   return (
