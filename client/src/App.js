@@ -7,6 +7,7 @@ import useIsOnline from "./utils/customHooks/useIsOnline";
 import Button from "./components/button/Button";
 import Input from "./components/input/Input";
 import { Link } from "react-router-dom";
+import Simmer from "./components/simmer/Simmer";
 
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
   const isOnline = useIsOnline();
   
   const fetchRestaurant = async()=>{
-    const res = await fetch('http://localhost:3000/data/all');
+    const res = await fetch('https://bakend-4i7i.onrender.com/data/all');
     const json = await res.json();
     const data = json[0]?.data?.cards[4]?.card?.card?.gridElements?.
     infoWithStyle?.restaurants?.map((x) => x.info);
@@ -40,7 +41,7 @@ const App = () => {
 
   return !isOnline ? (
     <h1>Look like you are not connected</h1>
-  ) : ( filteredRestaurant == null ? <h3>Simmer...</h3>:
+  ) : ( filteredRestaurant == null ? <Simmer />:
     <div className="app">
       <div className="container">
         <div className="search-box">

@@ -51,7 +51,6 @@ const Cart = () => {
 
   const cartData = useSelector((state)=>state.cart); 
   const menuKeys = Object.keys(cartData.cart);
-  console.log(menuKeys);
   const dispatch = useDispatch();
   const handleRemove = (e, item)=>{
     dispatch(removeItem(item.imageId));
