@@ -1,0 +1,15 @@
+
+.simmer{
+    margin-top: 150px;
+    justify-content: space-between;
+    gap: 1rem;
+
+}
+
+.simmer-item{
+    max-width: 270px;
+    height: 250px;
+    border: 1px solid #bab0b0;
+    background: #ddd;
+    border-radius: 10px;
+}
